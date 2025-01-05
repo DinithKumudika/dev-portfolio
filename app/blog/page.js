@@ -1,17 +1,41 @@
 // @flow strict
-
-import { personalData } from "@/utils/data/personal-data";
 import BlogCard from "../components/homepage/blog/blog-card";
+import Parser from "rss-parser";
+import * as cheerio from 'cheerio';
 
 async function getBlogs() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
+  const parser = new Parser();
+  const feed = await parser.parseURL(`https://medium.com/feed/${personalData.mediumUsername}`);
 
-  const data = await res.json();
-  return data;
+  const blogs = [];
+    
+    feed.items.forEach((item) => {
+      const $ = cheerio.load(item['content:encoded'] || item.content);
+      const coverImage =  $('img').first().attr('src') || $('img').first().attr('data-src');
+  
+      const pubDate = new Date(item.pubDate);
+      const year = pubDate.getUTCFullYear();
+      const month = pubDate.toLocaleString('default', { month: 'short' });
+      const day = String(pubDate.getUTCDate()).padStart(2, '0');
+  
+      const text = `${$('p').first().text()} ${$('p').eq(1).text()}`;
+      const smallDescription = text.substring(0, 100).trim() + '...';
+  
+      console.log(item);
+  
+      const blog = {
+        title: item.title,
+        cover: coverImage,
+        url: item.link,
+        tags: item.categories,
+        description: smallDescription,
+        published: `${day} ${month} ${year}`,
+      };
+      blogs.push(blog);
+    });
+
+    return blogs;
 };
 
 async function page() {
@@ -32,7 +56,7 @@ async function page() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 xl:gap-10">
         {
           blogs.map((blog, i) => (
-            blog?.cover_image &&
+            blog?.cover &&
             <BlogCard blog={blog} key={i} />
           ))
         }

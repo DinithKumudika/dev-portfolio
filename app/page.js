@@ -1,4 +1,4 @@
-import { personalData } from "@/utils/data/personal-data";
+import { Cheerio } from "cheerio";
 import AboutSection from "./components/homepage/about";
 import Blog from "./components/homepage/blog";
 import ContactSection from "./components/homepage/contact";
@@ -7,19 +7,42 @@ import Experience from "./components/homepage/experience";
 import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
+import Parser from "rss-parser";
+import * as cheerio from 'cheerio';
+import { personalData } from "@/utils/data/personal-data";
 
 async function getData() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+  const parser = new Parser();
+  const feed = await parser.parseURL(`https://medium.com/feed/${personalData.mediumUsername}`);
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
+  const blogs = [];
+  
+  feed.items.forEach((item) => {
+    const $ = cheerio.load(item['content:encoded'] || item.content);
+    const coverImage =  $('img').first().attr('src') || $('img').first().attr('data-src');
 
-  const data = await res.json();
+    const pubDate = new Date(item.pubDate);
+    const year = pubDate.getUTCFullYear();
+    const month = pubDate.toLocaleString('default', { month: 'short' });
+    const day = String(pubDate.getUTCDate()).padStart(2, '0');
 
-  const filtered = data.filter((item) => item?.cover_image).sort(() => Math.random() - 0.5);
+    const text = `${$('p').first().text()} ${$('p').eq(1).text()}`;
+    const smallDescription = text.substring(0, 100).trim() + '...';
 
-  return filtered;
+    console.log(item);
+
+    const blog = {
+      title: item.title,
+      cover: coverImage,
+      url: item.link,
+      tags: item.categories,
+      description: smallDescription,
+      published: `${day} ${month} ${year}`,
+    };
+    blogs.push(blog);
+  });
+
+  return blogs;
 };
 
 export default async function Home() {

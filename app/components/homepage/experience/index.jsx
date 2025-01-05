@@ -64,7 +64,7 @@ function Experience() {
                           height={50}
                         />
                         <div>
-                          <p className="text-base sm:text-xl mb-2 font-medium uppercase">
+                          <p className="text-base sm:text-xl mb-2 font-medium uppercase text-orange-500">
                             {experience.title}
                           </p>
                           <p className="text-sm sm:text-base">

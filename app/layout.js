@@ -10,7 +10,7 @@ import "./css/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio of Dinith Kumudika - Software Engineer",
+  title: "Portfolio - Dinith Kumudika",
   description:
     "This is the portfolio of Dinith Kumudika. I am a full stack developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.",
 };

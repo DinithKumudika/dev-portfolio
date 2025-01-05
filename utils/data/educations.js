@@ -1,20 +1,26 @@
 export const educations = [
   {
     id: 1,
-    title: "Bachelor Degree",
-    duration: "2020 - Present",
-    institution: "National University of Bangladesh",
+    title: "Bsc. (Hons) in Information Systems",
+    duration: "2021 - Present",
+    result: "Second Upper Division (3.6684 CPGA)",
+    institution: "University of Colombo School of Computing",
+    institutionLogo: "/image/ucsc.png"
   },
   {
     id: 2,
-    title: "Higher Secondary Certificate",
-    duration: "2018 - 2020",
-    institution: "Noakhali Islamia Kamil Madrasah",
+    title: "GCE A/L Examination",
+    duration: "2018",
+    result: "A - 9",
+    institution: "Rahula College, Matara",
+    institutionLogo: "/image/rahula.png"
   },
   {
     id: 3,
-    title: "Secondary School Certificate",
-    duration: "2008 - 2018",
-    institution: "Baitus Saif Islamia Madrasah",
+    title: "GCE O/L Examination",
+    duration: "2015",
+    result: "B - Combined Maths, C - Chemistry, C - Physics",
+    institution: "Rahula College, Matara",
+    institutionLogo: "/image/rahula.png"
   }
 ]
