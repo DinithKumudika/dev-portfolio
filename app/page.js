@@ -9,6 +9,7 @@ import Skills from "./components/homepage/skills";
 import Parser from "rss-parser";
 import * as cheerio from 'cheerio';
 import { personalData } from "@/utils/data/personal-data";
+import dynamic from 'next/dynamic';
 
 async function getData() {
   const parser = new Parser();

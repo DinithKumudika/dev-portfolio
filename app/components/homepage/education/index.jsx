@@ -2,8 +2,14 @@
 import { educations } from "@/utils/data/educations";
 import Image from "next/image";
 import education from '../../../assets/lottie/study.json';
-import AnimationLottie from "../../helper/animation-lottie";
+import dynamic from 'next/dynamic';
 import GlowCard from "../../helper/glow-card";
+
+const AnimationLottie = dynamic(
+  () =>
+    import("../../helper/animation-lottie").then((mod) => mod.AnimationLottie),
+  { ssr: false },
+);
 
 function Education() {
   return (

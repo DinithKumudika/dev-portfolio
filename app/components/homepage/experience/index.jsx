@@ -6,8 +6,14 @@ import Link from "next/link";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGlobe } from "react-icons/fa";
 import experience from '../../../assets/lottie/code.json';
-import AnimationLottie from "../../helper/animation-lottie";
+import dynamic from 'next/dynamic';
 import GlowCard from "../../helper/glow-card";
+
+const AnimationLottie = dynamic(
+  () =>
+    import("../../helper/animation-lottie").then((mod) => mod.AnimationLottie),
+  { ssr: false },
+);
 
 function Experience() {
   return (
