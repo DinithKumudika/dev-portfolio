@@ -4,6 +4,7 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  output: "export",
   images: {
     remotePatterns: [
       {
@@ -15,12 +16,7 @@ module.exports = {
         protocol: 'https',
         hostname: 'cdn-images-1.medium.com',
         pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'media2.dev.to',
-        pathname: '**',
-      },
+      }
     ],
   },
 }
