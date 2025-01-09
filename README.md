@@ -111,27 +111,3 @@ Whenever you push changes to your GitHub repo, Vercel will automatically redeplo
 4. Configure your environment variables by going to **Site Settings > Build & Deploy > Environment** and adding keys from your `.env` file.
 5. Click **Deploy Site**. Netlify will build and deploy your portfolio.
 
----
-
-# Packages Used :package:
-
-|   Used Package List    |
-| :--------------------: |
-|    @emailjs/browser    |
-|  @next/third-parties   |
-|         axios          |
-|      lottie-react      |
-|          next          |
-|       nodemailer       |
-|         react          |
-|       react-dom        |
-|   react-fast-marquee   |
-| react-google-recaptcha |
-|      react-icons       |
-|     react-toastify     |
-|         sharp          |
-|          sass          |
-|      tailwindcss       |
-
----
-
