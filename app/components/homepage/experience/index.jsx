@@ -5,15 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGlobe } from "react-icons/fa";
-import experience from '../../../assets/lottie/code.json';
-import dynamic from 'next/dynamic';
 import GlowCard from "../../helper/glow-card";
-
-const AnimationLottie = dynamic(
-  () =>
-    import("../../helper/animation-lottie").then((mod) => mod.AnimationLottie),
-  { ssr: false },
-);
+import ExperienceAnimation from "./ExperienceAnimation";
 
 function Experience() {
   return (
@@ -40,7 +33,7 @@ function Experience() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex justify-center items-start">
             <div className="w-full h-full">
-              <AnimationLottie animationPath={experience} width="65%" />
+              <ExperienceAnimation/>
             </div>
           </div>
 

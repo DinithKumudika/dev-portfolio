@@ -1,15 +1,8 @@
 // @flow strict
 import { educations } from "@/utils/data/educations";
 import Image from "next/image";
-import education from '../../../assets/lottie/study.json';
-import dynamic from 'next/dynamic';
 import GlowCard from "../../helper/glow-card";
-
-const AnimationLottie = dynamic(
-  () =>
-    import("../../helper/animation-lottie").then((mod) => mod.AnimationLottie),
-  { ssr: false },
-);
+import EducationAnimation from "./EducationAnimation";
 
 function Education() {
   return (
@@ -41,7 +34,7 @@ function Education() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex justify-center items-start">
             <div className="w-3/4 h-3/4">
-              <AnimationLottie animationPath={education} />
+              <EducationAnimation/>
             </div>
           </div>
 
