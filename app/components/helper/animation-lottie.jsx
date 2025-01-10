@@ -1,6 +1,7 @@
 "use client"
 
-import Lottie from "lottie-react";
+import {lazy} from "react";
+const Lottie = lazy(() => import("lottie-react"));
 
 const AnimationLottie = ({ animationPath, width = '95%' }) => {
   const defaultOptions = {
