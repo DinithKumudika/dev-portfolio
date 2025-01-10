@@ -5,7 +5,7 @@ export const educations = [
     duration: "2021 - Present",
     result: "Second Upper Division (3.6684 CPGA)",
     institution: "University of Colombo School of Computing",
-    institutionLogo: "/image/ucsc.png"
+    institutionLogo: "/public/image/ucsc.png"
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const educations = [
     duration: "2018",
     result: "A - 9",
     institution: "Rahula College, Matara",
-    institutionLogo: "/image/rahula.png"
+    institutionLogo: "/public/image/rahula.png"
   },
   {
     id: 3,
@@ -21,6 +21,6 @@ export const educations = [
     duration: "2015",
     result: "B - Combined Maths, C - Chemistry, C - Physics",
     institution: "Rahula College, Matara",
-    institutionLogo: "/image/rahula.png"
+    institutionLogo: "/public/image/rahula.png"
   }
 ]
