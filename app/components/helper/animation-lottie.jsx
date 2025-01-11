@@ -1,7 +1,7 @@
 "use client"
 
-import {lazy} from "react";
-const Lottie = lazy(() => import("lottie-react"));
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
 
 const AnimationLottie = ({ animationPath, width = '95%' }) => {
   const defaultOptions = {
