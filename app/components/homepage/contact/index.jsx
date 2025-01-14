@@ -70,7 +70,7 @@ function ContactSection() {
                 size={48}
               />
             </Link>
-            <Link target="_blank" href={personalData.twitter}>
+            <Link target="_blank" href={personalData.x}>
               <FaXTwitter
                 className="bg-orange-500 p-3 rounded-full hover:scale-110 transition-all duration-300 text-black cursor-pointer"
                 size={48}

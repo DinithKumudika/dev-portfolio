@@ -4,7 +4,7 @@ import { personalData } from "@/utils/data/personal-data";
 import Image from "next/image";
 import Link from "next/link";
 import { BsGithub, BsLinkedin, BsMedium } from "react-icons/bs";
-import { FaTwitterSquare } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill} from "react-icons/ri";
 
@@ -58,11 +58,11 @@ function HeroSection() {
               <BsMedium size={30} />
             </Link>
             <Link
-              href={personalData.twitter}
+              href={personalData.x}
               target='_blank'
               className="transition-all text-orange-500 hover:scale-125 duration-300"
             >
-              <FaTwitterSquare size={30} />
+              <FaXTwitter size={30} />
             </Link>
           </div>
 

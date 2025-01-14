@@ -10,7 +10,7 @@ export const personalData = {
   facebook: 'https://www.facebook.com/dinith.kumudika/',
   linkedIn: 'https://www.linkedin.com/in/dinith-kumudika/',
   medium: 'https://medium.com/@dinithwalpitagama',
-  twitter: 'https://x.com/Dinithk991218',
+  x: 'https://x.com/Dinithk991218',
   mediumUsername: "@dinithwalpitagama",
   resume: "https://drive.google.com/file/d/1eyutpKFFhJ9X-qpQGKhUNnVRkB5Wer00/view?usp=sharing"
 }
