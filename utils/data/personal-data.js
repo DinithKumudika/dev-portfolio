@@ -12,5 +12,5 @@ export const personalData = {
   medium: 'https://medium.com/@dinithwalpitagama',
   x: 'https://x.com/Dinithk991218',
   mediumUsername: "@dinithwalpitagama",
-  resume: "https://drive.google.com/file/d/1eyutpKFFhJ9X-qpQGKhUNnVRkB5Wer00/view?usp=sharing"
+  resume: "https://drive.google.com/file/d/1Clsi2DhgxtxXIND3Gf8umCDxdAWLvk4C/view?usp=sharing"
 }
